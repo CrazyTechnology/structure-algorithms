@@ -88,7 +88,6 @@ public class OrderStorage<E> {
 
     public  static void main(String [] args){
 
-
     }
 
 
