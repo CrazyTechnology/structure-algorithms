@@ -105,6 +105,7 @@ public class OrderStorage<E> {
         list.addElement(4);
         list.deleteElement(2);
         list.insertElement(3,2);
+        list.length();
     }
 
 }
