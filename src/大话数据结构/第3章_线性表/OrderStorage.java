@@ -98,7 +98,6 @@ public class OrderStorage<E> {
 
 
     public  static void main(String [] args) throws Exception {
-
         OrderStorage<Integer> list=new OrderStorage<Integer>();
         list.addElement(1);
         list.addElement(2);
@@ -107,10 +106,5 @@ public class OrderStorage<E> {
         list.deleteElement(2);
         list.insertElement(3,2);
     }
-
-
-
-
-
 
 }
