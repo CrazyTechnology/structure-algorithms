@@ -13,6 +13,7 @@ public class OrderStorage<E> {
 
     OrderStorage(){
         elementData=new Object[100]; //初始化
+        size=0;
     }
 
     // 检查下标是否合法
@@ -49,7 +50,6 @@ public class OrderStorage<E> {
      * @throws Exception
      */
     public E getElement(int index) throws Exception {
-        checkRange(size);
         return (E)elementData[index] ;
     }
 
@@ -61,10 +61,21 @@ public class OrderStorage<E> {
      */
     public void  insertElement(int index,E element) throws Exception {
         checkRange(index);
-        for(int i=index;i<size-1;i++){
+        for(int i=size-1;i>=index;i--){
             elementData[i+1]=elementData[i];
         }
          elementData[index]=element;
+        size++;
+    }
+
+
+    /**
+     * 添加新元素
+     * @param element 添加数据
+     * @throws Exception
+     */
+    public void  addElement(E element) throws Exception {
+        elementData[size]=element;
         size++;
     }
 
@@ -86,7 +97,17 @@ public class OrderStorage<E> {
     }
 
 
-    public  static void main(String [] args){
+    public  static void main(String [] args) throws Exception {
+
+        OrderStorage<Integer> list=new OrderStorage<Integer>();
+        list.addElement(1);
+        list.addElement(2);
+        list.addElement(3);
+        list.addElement(4);
+//        list.deleteElement(2);
+        list.insertElement(3,2);
+        System.out.print(list.getElement(0));
+
 
     }
 
