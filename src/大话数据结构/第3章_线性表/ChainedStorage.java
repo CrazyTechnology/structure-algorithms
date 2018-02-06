@@ -35,19 +35,7 @@ public class ChainedStorage <E>{
      */
     public  E  getElement(int index){
         checkPositionIndex(index);
-        if(index<(size>>1)){
-            Node <E> node=first;
-            for(int i=0;i<index;i++){
-                node=node.next;
-            }
-            return node.item;
-        }else{
-            Node <E> node=last;
-            for(int i=size-1;i>index;i++){
-                node=node.prev;
-            }
-            return node.item;
-        }
+        return (E) node(index);
 
     }
 
@@ -98,23 +86,34 @@ public class ChainedStorage <E>{
      */
     public void add(int index, E element) {
         checkPositionIndex(index);
+        if(index==size){
+            addLast(element);
+        }else{
+            node(index);
+
+        }
+
+
+
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //查询结点信息
+    private Node<E> node(int index) {
+        if(index<(size>>1)){
+            Node <E> node=first;
+            for(int i=0;i<index;i++){
+                node=node.next;
+            }
+            return (Node<E>) node;
+        }else{
+            Node <E> node=last;
+            for(int i=size-1;i>index;i++){
+                node=node.prev;
+            }
+            return (Node<E>) node;
+        }
+    }
 
 
     /**
