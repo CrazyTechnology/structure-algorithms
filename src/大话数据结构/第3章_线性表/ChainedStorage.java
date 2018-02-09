@@ -3,6 +3,7 @@ package 大话数据结构.第3章_线性表;
 
 /**
  * Created by xql on 2018/2/5.
+ * 线性表的链式存储
  */
 public class ChainedStorage <E>{
 
@@ -129,4 +130,17 @@ public class ChainedStorage <E>{
                 this.prev = prev;
             }
         }
+
+
+
+
+
+
+        public  static  void main(String args[]){
+
+        }
+
+
+
+
 }
