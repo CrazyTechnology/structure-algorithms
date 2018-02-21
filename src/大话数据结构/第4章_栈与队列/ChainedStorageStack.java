@@ -1,7 +1,6 @@
 package 大话数据结构.第4章_栈与队列;
 
 import java.util.EmptyStackException;
-import java.util.Stack;
 
 /**
  * Created by ming on 18-2-9.
