@@ -35,7 +35,7 @@ public class ChainedStorage <E>{
      */
     public  E  getElement(int index){
         checkPositionIndex(index);
-        return (E) node(index);
+        return node(index).item;
 
     }
 
@@ -66,6 +66,7 @@ public class ChainedStorage <E>{
             last=newLast;
         else
             oldLast.next=newLast;
+        last=newLast;
         size++;
     }
 
@@ -108,7 +109,7 @@ public class ChainedStorage <E>{
             return (Node<E>) node;
         }else{
             Node <E> node=last;
-            for(int i=size-1;i>index;i++){
+            for(int i=size-1;i>=index;i--){
                 node=node.prev;
             }
             return (Node<E>) node;
@@ -137,7 +138,11 @@ public class ChainedStorage <E>{
 
 
         public  static  void main(String args[]){
-
+            ChainedStorage<Integer> storage=new ChainedStorage<Integer>();
+            storage.add(10);
+            storage.add(20);
+            storage.add(30);
+            System.out.print(storage.getElement(3));
         }
 
 
