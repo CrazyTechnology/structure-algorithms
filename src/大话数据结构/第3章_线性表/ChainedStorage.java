@@ -51,6 +51,7 @@ public class ChainedStorage <E>{
             last=newFirst;
         else
             oldFirst.prev=newFirst;
+        first=newFirst;
         size++;
     }
 
@@ -76,7 +77,10 @@ public class ChainedStorage <E>{
      * @param element
      */
     public void add(E element) {
-        addLast(element);
+        if(size==0)
+            addFirst(element);
+        else
+            addLast(element);
     }
 
 
