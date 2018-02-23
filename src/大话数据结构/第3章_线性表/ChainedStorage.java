@@ -1,6 +1,12 @@
 package 大话数据结构.第3章_线性表;
 
 
+import com.sun.javafx.scene.control.skin.VirtualFlow;
+import javafx.scene.transform.MatrixType;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 /**
  * Created by xql on 2018/2/5.
  * 线性表的链式存储
@@ -94,7 +100,7 @@ public class ChainedStorage <E>{
         if(index==size){
             addLast(element);
         }else{
-            node(index);
+            Node<E> oldEle=node(index);
 
         }
 
@@ -146,6 +152,7 @@ public class ChainedStorage <E>{
             storage.add(10);
             storage.add(20);
             storage.add(30);
+            storage.add(2,50);
             System.out.print(storage.getElement(3));
         }
 
