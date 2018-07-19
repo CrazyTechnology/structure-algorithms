@@ -1,9 +1,83 @@
 package algorithms;
 
+import org.junit.Test;
+
 /**
  * Created by ming on 2017/10/19.
  */
 public class chapter1_1 {
+
+
+
+    @Test
+    //1.1.1
+    public void test_1_1_1(){
+       int a= (0+15)/2;  //7
+       int b= (0+15)/2;  //7.0
+        boolean boo = true && false || true && true;  //true
+        System.out.print(boo);
+    }
+
+    @Test
+    //1.1.2
+    public void test_1_1_2(){
+        double dou = (1 + 2.236) / 2; //double 类型 1.618
+        double v = 1 + 2 + 3 + 4.0;   //double 类型  10.0
+        boolean b = 4.1 >= 4;       //  boolean 类型 true
+        String s = 1 + 2 + "3";     //  string  33
+        System.out.print(s);
+    }
+
+    @Test
+    //1.1.3
+    public void test_1_1_3(){
+       int a=0,b=1,c=0;
+       if(a==b&&b==c){
+         System.out.println("相等");
+       }else{
+           System.out.println("不想等");
+       }
+    }
+
+
+    @Test
+    //1.1.4
+    public void test_1_1_4(){
+        int a=0,b=0,c;
+      //  if(a>b) then c=0;  不识别then
+        //if a>b{c=0} 没有括号
+    }
+
+    @Test
+    //1.1.5
+    public void test_1_1_5(){
+        double x=0.1,y=0.8;
+        if(x<1&&x>0&&y>0&&y<1){
+           System.out.println("ok");
+        }else {
+            System.out.println("no");
+        }
+    }
+
+    @Test
+    //1.1.6
+    public void test_1_1_6(){
+        int f=0;
+        int g=1;
+        for(int i=0;i<=15;i++){
+            System.out.println(f);//0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610  斐波那契数列
+            f=f+g;
+            g=f-g;
+        }
+    }
+
+    @Test
+    //1.1.7
+    public void test_1_1_7(){
+
+    }
+
+
     public static void main(String args[]){
 
         //1.1.1 System.out.println((0+15)/2);
