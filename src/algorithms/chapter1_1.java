@@ -74,9 +74,59 @@ public class chapter1_1 {
     @Test
     //1.1.7
     public void test_1_1_7(){
+        double t=9.0;
+        while (Math.abs(t-9.0/t)>.001){
+            t=(9.0/t + t)/2.0;
+        }
+        System.out.println(t);
+
+        int sum=0;
+        for(int i=1;i<1000;i++){
+            for(int j=0;j<1000;j++){
+                sum++;
+            }
+        }
+        System.out.println(sum);
+
+        sum=0;
+        for(int i=1;i<1000;i*=2){
+            for(int j=0;j<1000;j++){
+                sum++;
+            }
+        }
+        System.out.println(sum);
 
     }
 
+    @Test
+    //1.1.8
+    public void test_1_1_8(){
+        System.out.println('b'); //b
+        System.out.println('b'+'c'); //197
+        System.out.println((char)('a'+4)); //e
+    }
+
+
+    public static int[] swap(int arry[]){
+        int i=0,j=arry.length-1;
+        int temp;
+        while (i<j){
+            if(arry[j]%2==0){
+                j--;
+                continue;
+            }
+            if(arry[i]%2==1){
+                i++;
+                continue;
+            }
+            temp=arry[j];
+            arry[j]=arry[i];
+            arry[i]=temp;
+            i++;
+            j--;
+        }
+        return arry;
+    }
 
     public static void main(String args[]){
 
@@ -113,26 +163,7 @@ public class chapter1_1 {
         }
     }
 
-    public static int[] swap(int arry[]){
-        int i=0,j=arry.length-1;
-        int temp;
-        while (i<j){
-            if(arry[j]%2==0){
-                j--;
-                continue;
-            }
-            if(arry[i]%2==1){
-                i++;
-                continue;
-            }
-            temp=arry[j];
-            arry[j]=arry[i];
-            arry[i]=temp;
-            i++;
-            j--;
-        }
-        return arry;
-    }
+
 
 
     public static void sum(){
