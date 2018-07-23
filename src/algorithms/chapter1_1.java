@@ -12,8 +12,8 @@ public class chapter1_1 {
     @Test
     //1.1.1
     public void test_1_1_1(){
-       int a= (0+15)/2;  //7
-       int b= (0+15)/2;  //7.0
+        int a= (0+15)/2;  //7
+        int b= (0+15)/2;  //7.0
         boolean boo = true && false || true && true;  //true
         System.out.print(boo);
     }
@@ -31,12 +31,12 @@ public class chapter1_1 {
     @Test
     //1.1.3
     public void test_1_1_3(){
-       int a=0,b=1,c=0;
-       if(a==b&&b==c){
-         System.out.println("相等");
-       }else{
-           System.out.println("不想等");
-       }
+        int a=0,b=1,c=0;
+        if(a==b&&b==c){
+            System.out.println("相等");
+        }else{
+            System.out.println("不想等");
+        }
     }
 
 
@@ -44,7 +44,7 @@ public class chapter1_1 {
     //1.1.4
     public void test_1_1_4(){
         int a=0,b=0,c;
-      //  if(a>b) then c=0;  不识别then
+        //  if(a>b) then c=0;  不识别then
         //if a>b{c=0} 没有括号
     }
 
@@ -53,7 +53,7 @@ public class chapter1_1 {
     public void test_1_1_5(){
         double x=0.1,y=0.8;
         if(x<1&&x>0&&y>0&&y<1){
-           System.out.println("ok");
+            System.out.println("ok");
         }else {
             System.out.println("no");
         }
@@ -106,6 +106,41 @@ public class chapter1_1 {
         System.out.println((char)('a'+4)); //e
     }
 
+    @Test
+    //1.1.9
+    public void test_1_1_9(){
+        String s = Integer.toBinaryString(50);
+        System.out.println(s);
+
+        int a=50;
+        String p="";
+        while (a/2!=0){
+            //除以2，取余数然后反转
+            p=a%2+p;
+            a=a/2;
+        }
+        p=a%2+p;
+        System.out.println(p);
+
+    }
+
+    @Test
+    //1.1.10
+    public void test_1_1_10(){
+//        int a[];
+//        for(int i=0;i<10;i++){
+//            a[i]=i*i;
+//        }
+        //以上代码 a[]没有被初始化
+    }
+
+    @Test
+    //1.1.11
+    public void test_1_1_11(){
+
+    }
+
+
 
     public static int[] swap(int arry[]){
         int i=0,j=arry.length-1;
@@ -131,21 +166,21 @@ public class chapter1_1 {
     public static void main(String args[]){
 
         //1.1.1 System.out.println((0+15)/2);
-                //System.out.println(0.000002*100000000.1);
+        //System.out.println(0.000002*100000000.1);
         // 1.1.2       System.out.println((1+2.236)/2);
         //        System.out.println(1 + 2 + 3 + 4.0);
         //        System.out.println(4.1>=4);
-         //       System.out.println(1+2+"3"); 33
+        //       System.out.println(1+2+"3"); 33
         //1.1.3equals(10,10,10);
         //print();
-       // System.out.print('b'+'c');
-       // System.out.print((char)('a'+4));
+        // System.out.print('b'+'c');
+        // System.out.print((char)('a'+4));
 
 //        for(int i=2;i<100;i++){
 //            System.out.println(i+"  "+isPrime(i));
 //        }
-    //System.out.print(sqrt(9.0));
-       // sum();
+        //System.out.print(sqrt(9.0));
+        // sum();
         int array[]=new int[10];
         array[0]=8;
         array[1]=1;
