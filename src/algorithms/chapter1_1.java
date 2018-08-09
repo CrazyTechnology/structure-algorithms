@@ -2,6 +2,8 @@ package algorithms;
 
 import org.junit.Test;
 
+import java.util.HashMap;
+
 /**
  * Created by ming on 2017/10/19.
  */
@@ -137,7 +139,7 @@ public class chapter1_1 {
     @Test
     //1.1.11
     public void test_1_1_11(){
-
+        HashMap map=new HashMap();
     }
 
 
