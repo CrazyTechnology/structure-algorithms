@@ -34,7 +34,6 @@ public class SortUtils {
             while (low<higth&&arrays[low]<=pivotkey)
                 low++;
             swap(arrays,low,higth);
-
         }
         return low; //返回枢轴所在位置
 
