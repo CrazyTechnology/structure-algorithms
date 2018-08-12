@@ -26,7 +26,7 @@ public class SortUtils {
      */
    public static void  bubbleSort(SqList list){
          for (int i=0;i<list.length;i++)
-             for(int j=i+1;j<=list.length;j++)
+             for(int j=i+1;j<list.length;j++)
                  if(list.r[i]>list.r[j])
                      swap(list,i,j);
     }
@@ -37,20 +37,39 @@ public class SortUtils {
      */
     public static void  bubbleSortAuthentic(SqList list){
         //两两比较大小，效率高于上一种写法
-        for (int i=0;i<list.length;i++)
+        boolean flag=true;
+        for (int i=0;i<list.length&&flag;i++){
+            flag=false;
             for(int j=list.length-1;j>=i;j--)
-                if(list.r[j]>list.r[j+1])
+                if(list.r[j]>list.r[j+1]){
                     swap(list,j,j+1);
+                    flag=true;
+                }
+        }
     }
 
 
+    //选择排序
+    public static void selectSort(SqList list){
+        int min;
+        for(int i=0;i<list.length;i++){
+            min=i;
+            for(int j=i+1;j<list.length;j++){
+                if(list.r[min]>list.r[j])
+                    min=j;
+            }
+            if(min!=i)
+                swap(list,i,min);
+        }
+
+    }
 
     public static void main(String[]args){
         SqList list=new SqList();
-        list.r=new int[]{1,3,5,7,8,6,4,12,50,37,23,18,13,11,45,20,23,90,189};
-        list.length=list.r.length-1;
+        list.r=new int[]{1,3,5,7,8,6,4};
+        list.length=list.r.length;
         long start=System.currentTimeMillis();
-        bubbleSortAuthentic(list);
+        selectSort(list);
         long end=System.currentTimeMillis();
         System.out.println(end-start);
     }
