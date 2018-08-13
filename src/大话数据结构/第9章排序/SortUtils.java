@@ -64,12 +64,28 @@ public class SortUtils {
 
     }
 
+
+    //直接插入排序
+    public static void  insertSort(SqList list){
+        int j;
+        for(int i=1;i<list.length;i++){
+           int tmp=list.r[i];
+           for(j=i-1;j>=0&&tmp<list.r[j];j--){
+               list.r[j+1]=list.r[j];
+           }
+           list.r[j+1]=tmp;
+        }
+
+
+
+    }
+
     public static void main(String[]args){
         SqList list=new SqList();
         list.r=new int[]{1,3,5,7,8,6,4};
         list.length=list.r.length;
         long start=System.currentTimeMillis();
-        selectSort(list);
+        insertSort(list);
         long end=System.currentTimeMillis();
         System.out.println(end-start);
     }
