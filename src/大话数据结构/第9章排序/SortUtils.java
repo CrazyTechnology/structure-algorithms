@@ -1,8 +1,6 @@
 package 大话数据结构.第9章排序;
 
 
-import java.lang.reflect.Array;
-
 public class SortUtils {
 
     private static final int  MAXSIZE=10;
@@ -81,52 +79,51 @@ public class SortUtils {
     }
 
     public static void main(String[]args){
-        SqList list=new SqList();
-        list.r=new int[]{1,3,5,7,8,6,4};
-        list.length=list.r.length;
-        long start=System.currentTimeMillis();
-        insertSort(list);
-        long end=System.currentTimeMillis();
-        System.out.println(end-start);
+
+        int[] ints = QuickSort(new int[]{10, 8, 7, 16, 6, 3, 2, 18, 17, 9});
+        System.out.println("111");
     }
 
     /**
      * 快速排序
      */
-//    public static void QuickSort(int [] arrays){
-//        qsort(arrays,1,arrays.length);
-//    }
+    public static int[] QuickSort(int [] arrays){
+      return   qsort(arrays,0,arrays.length-1);
+    }
 
-//    private static void qsort(int[] arrays, int low, int higth) {
-//        int pivot;
-//        if(low<higth){
-//            pivot=partition(arrays,low,higth);
-//            qsort(arrays,low,pivot-1);
-//            qsort(arrays,pivot+1,higth);
-//        }
-//    }
-
-
-
-//    //获取枢轴位置
-//    private static int partition(int[] arrays, int low, int higth) {
-//        int pivotkey;
-//        pivotkey=arrays[low];
-//        while (low<higth){
-//            while (low<higth&&arrays[higth]>=pivotkey)
-//                higth--;
-//            swap(arrays,low,higth);
-//            while (low<higth&&arrays[low]<=pivotkey)
-//                low++;
-//            swap(arrays,low,higth);
-//        }
-//        return low; //返回枢轴所在位置
-//
-//    }
+    private static int[] qsort(int[] arrays, int low, int higth) {
+        int pivot;
+        if(low<higth){
+            pivot=partition(arrays,low,higth);
+            qsort(arrays,low,pivot-1);
+            qsort(arrays,pivot+1,higth);
+        }
+        return arrays;
+    }
 
 
 
+    //获取枢轴位置
+    private static int partition(int[] arrays, int low, int higth) {
+        int pivotkey;
+        pivotkey=arrays[low];
+        while (low<higth){
+            while (low<higth&&arrays[higth]>=pivotkey)
+                higth--;
+            swaps(arrays,low,higth);
+            while (low<higth&&arrays[low]<=pivotkey)
+                low++;
+            swaps(arrays,low,higth);
+        }
+        return low; //返回枢轴所在位置
 
+    }
+
+    private static void swaps(int[] arrays, int low, int higth) {
+        int a = arrays[low];
+        arrays[low]=arrays[higth];
+        arrays[higth]=a;
+    }
 
 
 }
