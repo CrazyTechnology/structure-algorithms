@@ -86,49 +86,43 @@ public class SortUtils {
     }
 
     public static void main(String[]args){
-        SqList list=new SqList();
-        list.r=new int[]{1,3,5,7,8,6,4};
-        list.length=list.r.length;
-        long start=System.currentTimeMillis();
-        insertSort(list);
-        long end=System.currentTimeMillis();
-        System.out.println(end-start);
+
+        int[] ints = QuickSort(new int[]{10, 8, 7, 16, 6, 3, 2, 18, 17, 9});
+        System.out.println("111");
     }
 
     /**
      * 快速排序
      */
-    public static void QuickSort(int [] arrays){
-        qsort(arrays,1,arrays.length);
+    public static int[] QuickSort(int [] arrays){
+      return   qsort(arrays,0,arrays.length-1);
     }
 
-    private static void qsort(int[] arrays, int low, int higth) {
+    private static int[] qsort(int[] arrays, int low, int higth) {
         int pivot;
         if(low<higth){
             pivot=partition(arrays,low,higth);
             qsort(arrays,low,pivot-1);
             qsort(arrays,pivot+1,higth);
         }
+        return arrays;
     }
 
 
 
-//    //获取枢轴位置
+    //获取枢轴位置
     private static int partition(int[] arrays, int low, int higth) {
         int pivotkey;
         pivotkey=arrays[low];
         while (low<higth){
             while (low<higth&&arrays[higth]>=pivotkey)
                 higth--;
-            swap(arrays,low,higth);
+            swaps(arrays,low,higth);
             while (low<higth&&arrays[low]<=pivotkey)
                 low++;
-            swap(arrays,low,higth);
+            swaps(arrays,low,higth);
         }
         return low; //返回枢轴所在位置
-
-    }
-
 
 
 
