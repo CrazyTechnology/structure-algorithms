@@ -19,6 +19,11 @@ public class SortUtils {
         list.r[j]=temp;
     }
 
+    private static void swap(int [] array, int i, int j) {
+        int temp = array[i];
+        array[i]=array[j];
+        array[j]=temp;
+    }
 
     /**
      * 冒泡排序
@@ -93,36 +98,36 @@ public class SortUtils {
     /**
      * 快速排序
      */
-//    public static void QuickSort(int [] arrays){
-//        qsort(arrays,1,arrays.length);
-//    }
+    public static void QuickSort(int [] arrays){
+        qsort(arrays,1,arrays.length);
+    }
 
-//    private static void qsort(int[] arrays, int low, int higth) {
-//        int pivot;
-//        if(low<higth){
-//            pivot=partition(arrays,low,higth);
-//            qsort(arrays,low,pivot-1);
-//            qsort(arrays,pivot+1,higth);
-//        }
-//    }
+    private static void qsort(int[] arrays, int low, int higth) {
+        int pivot;
+        if(low<higth){
+            pivot=partition(arrays,low,higth);
+            qsort(arrays,low,pivot-1);
+            qsort(arrays,pivot+1,higth);
+        }
+    }
 
 
 
 //    //获取枢轴位置
-//    private static int partition(int[] arrays, int low, int higth) {
-//        int pivotkey;
-//        pivotkey=arrays[low];
-//        while (low<higth){
-//            while (low<higth&&arrays[higth]>=pivotkey)
-//                higth--;
-//            swap(arrays,low,higth);
-//            while (low<higth&&arrays[low]<=pivotkey)
-//                low++;
-//            swap(arrays,low,higth);
-//        }
-//        return low; //返回枢轴所在位置
-//
-//    }
+    private static int partition(int[] arrays, int low, int higth) {
+        int pivotkey;
+        pivotkey=arrays[low];
+        while (low<higth){
+            while (low<higth&&arrays[higth]>=pivotkey)
+                higth--;
+            swap(arrays,low,higth);
+            while (low<higth&&arrays[low]<=pivotkey)
+                low++;
+            swap(arrays,low,higth);
+        }
+        return low; //返回枢轴所在位置
+
+    }
 
 
 
