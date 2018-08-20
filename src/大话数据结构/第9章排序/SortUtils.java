@@ -113,16 +113,17 @@ public class SortUtils {
     //获取枢轴位置
     private static int partition(int[] arrays, int low, int higth) {
         int pivotkey;
-        pivotkey=arrays[low];
-        while (low<higth){
-            while (low<higth&&arrays[higth]>=pivotkey)
+        pivotkey = arrays[low];
+        while (low < higth) {
+            while (low < higth && arrays[higth] >= pivotkey)
                 higth--;
-            swaps(arrays,low,higth);
-            while (low<higth&&arrays[low]<=pivotkey)
+            swap(arrays, low, higth);
+            while (low < higth && arrays[low] <= pivotkey)
                 low++;
-            swaps(arrays,low,higth);
+            swap(arrays, low, higth);
         }
         return low; //返回枢轴所在位置
+    }
 
 
 
